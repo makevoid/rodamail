@@ -1,0 +1,21 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    mail (2.6.3)
+      mime-types (>= 1.16, < 3)
+    mime-types (2.99)
+    puma (2.15.3)
+    rack (1.6.4)
+    roda (2.9.0)
+      rack
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  mail
+  puma
+  roda
+
+BUNDLED WITH
+   1.11.2
