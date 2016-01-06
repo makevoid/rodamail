@@ -15,7 +15,11 @@ class Mailer
           from SENDER_ADDRESS
       reply_to from_address
        subject subject
-          body body
+
+      html_part do
+        content_type 'text/html; charset=UTF-8'
+        body body
+      end
     end
 
     if APP_ENV == "development"
