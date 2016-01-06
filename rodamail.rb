@@ -2,9 +2,12 @@ require_relative "config/env"
 
 class RodaMail < Roda
 
-  def body_layout(subject:, body:)
+  def body_layout(from:, body:)
     <<-BODY.gsub(/^\s{4}/, '')
-      <h1>#{subject}</h1>
+      <h5>New message received from:<h5>
+      <h3>#{from}</h1>
+      <br>
+      <h5>Message:<h5>
       <p>#{body}</p>
     BODY
   end
@@ -43,11 +46,12 @@ class RodaMail < Roda
           from_address = params[:from_address] || "blank_address"
           body         = params[:body]         || "the_body_was_left_blank"
 
-          subject = "New message from: #{from_name} <#{from_address}>"
+          from = "#{from_name} <#{from_address}>"
+          subject = "New message received from: #{from}"
 
           body = body_layout(
-            subject: subject,
-            body:    body,
+            from: from,
+            body: body,
           )
 
           Mailer.deliver(
