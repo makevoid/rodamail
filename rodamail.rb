@@ -4,10 +4,10 @@ class RodaMail < Roda
 
   def body_layout(from:, body:)
     <<-BODY.gsub(/^\s{4}/, '')
-      <h5>New message received from:<h5>
+      <h4>New message received from:</h4>
       <h3>#{from}</h1>
       <br>
-      <h5>Message:<h5>
+      <h4>Message:</h4>
       <p>#{body}</p>
     BODY
   end
