@@ -20,7 +20,6 @@ Edit ./config/env.rb
 
     from_name:    "Mario Foo"
     from_address: "mario@example.com",
-    subject:      "foo",
     body:         "bar"
 
 easy as that,
